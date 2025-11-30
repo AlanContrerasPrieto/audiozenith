@@ -13,6 +13,11 @@ try:
 except Exception as e:
     print(f"Error al cargar un modelo de Whisper: {e}")
 
+@app.get("/saludos")
+async def saludos():
+    return {"mensaje": "Hola, el servidor FastAPI está funcionando correctamente."}
+# ----------------------------------------------------
+
 @app.post("/transcribe")
 async def transcribe_audio(
     # Parámetro de consulta: se puede acceder a través de ?model_name=medium
